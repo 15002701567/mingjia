@@ -64,6 +64,7 @@ window.msgalert1 = (function () {
             return;
         }
         if (!mobile) {
+<<<<<<< HEAD
             msgalert1('请输入手机号码');
             return;
         }
@@ -104,3 +105,6 @@ window.msgalert1 = (function () {
 
 
 
+=======
+            msgalert1('请输入手机号码')
+>>>>>>> parent of 088ab76... js2修复
