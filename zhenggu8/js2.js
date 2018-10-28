@@ -64,4 +64,44 @@ window.msgalert1 = (function () {
             return;
         }
         if (!mobile) {
-            msgalert1('请输入手机号码')
+            msgalert1('请输入手机号码');
+            return;
+        }
+        if (!telRegexp.test(mobile)) {
+            msgalert1('请输入正确手机号码');
+            return;
+        }
+
+      
+        var j = $("form").serializeArray();//序列化name/value
+        $.ajax({
+            type: 'GET',  //这里用GET
+            url: 'http://www.mingjialaopu.com/g/zhenggu8/tj2.php',
+            dataType: 'jsonp',  //类型
+            data: j,
+            jsonp: 'callback', //jsonp回调参数，必需
+            async: false,
+            success: function(data) {//返回的json数据
+				if(data.msg="Success"){
+					jishu =0;
+					msgalert1('提交成功');
+					
+				}else{
+					msgalert1('系统错误');
+					
+				}
+				
+                console.log(data); //回调输出           
+            },
+            timeout: 3000
+        })
+    
+
+    })
+    
+})	
+
+
+
+
+
