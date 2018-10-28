@@ -96,7 +96,6 @@ window.msgalert1 = (function () {
             timeout: 3000
         })
     
-
     })
     
 })	
